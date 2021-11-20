@@ -8,7 +8,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.validation.Valid;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
@@ -28,7 +30,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public Object addUser(User user, Map<String, Object> model){
+    public Object addUser(@Valid User user, Map<String, Object> model){
         User optionalUser = userService.findByUsername(user.getUsername());
         if (optionalUser!=null){
             model.put("message", "User exists!");

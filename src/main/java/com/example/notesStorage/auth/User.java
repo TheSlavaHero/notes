@@ -12,8 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
@@ -41,7 +40,7 @@ public class User implements BaseEntity<UUID>, UserDetails {
 
     @NotNull
     @Column()
-    @UniqueElements
+//    @UniqueElements
     @Size(min = 5, max = 50, message = "should be more than 5 and not more than 50")
     private String username;
 
