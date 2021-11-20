@@ -1,1 +1,1 @@
-java -Dserver.port=9999 -jar target/notesStorage-0.0.1-SNAPSHOT.war
+java -Dserver.port=9999 -jar target/notesStorage-0.0.1-SNAPSHOT.jar
